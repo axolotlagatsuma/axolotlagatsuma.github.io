@@ -1,8 +1,66 @@
-<html>
-    <head>
-        <title>Axolotl Agatsuma's Page</title>
-    </head>
-    <body>
-        This is work in progress stuff. I am planning to use this page for a blog.
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Animated Pi Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #pi-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Add your styles for the animated pi background here */
+            background: url('bg.gif') center/cover no-repeat fixed;
+        }
+
+        .container {
+            z-index: 1;
+            position: relative;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        #blog {
+            /* Add styles for the blog section */
+        }
+
+        #calendar {
+            /* Add styles for the calendar section */
+        }
+    </style>
+</head>
+<body>
+    <div id="pi-background"></div>
+
+    <div class="container">
+        <header>
+            <h1>Your Website Name</h1>
+        </header>
+
+        <nav>
+            <!-- Add your navigation links here -->
+        </nav>
+
+        <section id="blog">
+            <!-- Add your blog content here -->
+        </section>
+
+        <section id="calendar">
+            <!-- Add your calendar content here -->
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Add your additional JavaScript files here -->
+</body>
 </html>
