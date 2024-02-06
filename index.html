@@ -49,13 +49,12 @@
         }
 
         /* Add styles for the blog section */
-        #blog {
-            /* Add your styles for the blog section */
+        #posts {
+            margin-top: 40px; /* Add some space between posts */
         }
 
-        /* Add styles for the calendar section */
-        #calendar {
-            /* Add your styles for the calendar section */
+        #posts article {
+            margin-bottom: 40px; /* Add some space between articles */
         }
     </style>
 </head>
@@ -67,28 +66,23 @@
             <h1>Axolotl Tank</h1>
             <h3>Place for people who love axolotls and tech</h3>
             <h4>I am currently working on this page. I'll release it when I'm done with the blog infrastructure. Until then, check out my <a href="https://github.com/axolotlagatsuma/axolotlagatsuma.github.io">GitHub</a>.</h4>
-        </header>
-
+        
         <main>
             <section id="posts">
                 <!-- Blog posts will be dynamically loaded here -->
             </section>
         </main>
+    </header>
         <footer>
-            <p>&copy; 2024 Axolotl Tank</p>
+            <p>&copy; Not copyrighted lol</p>
         </footer>
-
-        <nav>
-            <!-- Add your navigation links here -->
-        </nav>
-
-        <section id="calendar">
-            <!-- Add your calendar content here -->
-        </section>
     </div>
 
     <!-- Include jQuery, Popper.js, and Bootstrap JS -->
-   <!-- Blog Renderer --> <script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
         fetch('_posts.json')
             .then(response => response.json())
             .then(posts => {
@@ -105,9 +99,6 @@
             })
             .catch(error => console.error('Error fetching posts:', error));
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Add your additional JavaScript files here -->
 </body>
 </html>
