@@ -7,60 +7,10 @@
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            font-family: Arial, sans-serif; /* Specify a fallback font family */
-        }
-
-        #background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #2c2c2c;
-            /* Add your styles for the animated pi background here */
-            /* background: url('bg.gif') center/cover no-repeat fixed; */
-        }
-
-        .container {
-            z-index: 1;
-            position: relative;
-            padding: 60px 20px;
-            color: white;
-        }
-
-        /* Add styles for the header */
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        /* Add styles for the footer */
-        footer {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        /* Add styles for the main section */
-        main {
-            text-align: center;
-        }
-
-        /* Add styles for the blog section */
-        #posts {
-            margin-top: 40px; /* Add some space between posts */
-        }
-
-        #posts article {
-            margin-bottom: 40px; /* Add some space between articles */
-        }
+        /* Your CSS styles here */
     </style>
 </head>
 <body>
-    <div id="background"></div>
-
     <div class="container">
         <header>
             <h1>Axolotl Tank</h1>
@@ -78,32 +28,29 @@
         </footer>
     </div>
 
-    <!-- Include jQuery, Popper.js, and Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <!-- Include Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        fetchBlogPosts();
-
-        async function fetchBlogPosts() {
-            try {
-                const response = await fetch('_posts');
-                const files = await response.json();
+        // Fetch blog posts from a JSON file or an API endpoint
+        fetch('_posts.json')
+            .then(response => response.json())
+            .then(posts => {
                 const postsContainer = document.getElementById('posts');
-                files.forEach(file => {
-                    fetch(file)
-                        .then(response => response.text())
-                        .then(html => {
-                            const postElement = document.createElement('article');
-                            postElement.innerHTML = html;
-                            postsContainer.appendChild(postElement);
-                        });
+                posts.forEach(post => {
+                    const postElement = document.createElement('article');
+                    postElement.innerHTML = `
+                        <h2>${post.title}</h2>
+                        <p>Published on: ${post.date}</p>
+                        <div>
+                            <p>${post.content}</p>
+                        </div>
+                    `;
+                    postsContainer.appendChild(postElement);
                 });
-            } catch (error) {
+            })
+            .catch(error => {
                 console.error('Error fetching blog posts:', error);
-            }
-        }
+            });
     </script>
-    <!-- Add your additional JavaScript files here -->
 </body>
 </html>
