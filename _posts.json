@@ -1,0 +1,17 @@
+[
+  {
+    "title": "My First Blog Post",
+    "date": "February 6, 2024",
+    "content": "Welcome to my first blog post! This is just a sample post to demonstrate how you can write and format your blog content using HTML."
+  },
+  {
+    "title": "Introduction to Axolotls",
+    "date": "February 7, 2024",
+    "content": "In this post, we'll explore the fascinating world of axolotls and learn about their unique characteristics and behaviors."
+  },
+  {
+    "title": "Axolotls in Captivity",
+    "date": "February 8, 2024",
+    "content": "Learn how to properly care for axolotls in captivity, including tank setup, feeding, and maintenance tips."
+  }
+]
