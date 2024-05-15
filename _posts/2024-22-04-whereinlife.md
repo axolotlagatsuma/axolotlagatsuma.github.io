@@ -4,10 +4,10 @@ read_time: true
 show_date: true
 title: "Where am I in my life?"
 date: 2024-04-22
-img: posts/20210420/post8-rembrandt.jpg
+img: posts/20210228/MLLibrary.jpg
 tags: [author, irl]
 category: about_me
-author: AxolotlAgatsuma
+author: Axolotl Agatsuma
 description: "This post is like a diary."
 ---
 Hiya!
