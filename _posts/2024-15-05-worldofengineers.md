@@ -4,7 +4,7 @@ read_time: true
 show_date: true
 title: "World of Engineers, a new modpack."
 date: 2024-05-15
-img: posts/2024-05-1-woe/woe_1_logo.png
+img: posts/2024-05-15-woe/woe_1_logo.png
 tags: [gaming, mods, minecraft]
 category: gaming
 author: Axolotl Agatsuma
