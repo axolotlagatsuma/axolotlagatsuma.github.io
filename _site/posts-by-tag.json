@@ -6,7 +6,49 @@
   "tag" : "author",
   "posts" : [
       
+      "./whereinlife.html",
+      
       "./whoami.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "gaming",
+  "posts" : [
+      
+      "./worldofengineers.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "irl",
+  "posts" : [
+      
+      "./whereinlife.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "minecraft",
+  "posts" : [
+      
+      "./worldofengineers.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "mods",
+  "posts" : [
+      
+      "./worldofengineers.html"
       
     ]
   } 
