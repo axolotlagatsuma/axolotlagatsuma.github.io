@@ -1,9 +1,10 @@
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, FileText } from "lucide-react";
 import BlueprintContainer from "@/components/BlueprintContainer";
 import BarcodeSvg from "@/components/BarcodeSvg";
 import TerminalButton from "@/components/TerminalButton";
-import { posts } from "@/data/posts";
+import { fetchPost, type Post } from "@/data/posts";
 
 const renderMarkdown = (content: string) => {
   const lines = content.split("\n");
@@ -89,7 +90,27 @@ const renderMarkdown = (content: string) => {
 
 const PostPage = () => {
   const { id } = useParams();
-  const post = posts.find((p) => p.id === id);
+  const [post, setPost] = useState<Post | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (id) {
+      fetchPost(id).then((p) => {
+        setPost(p);
+        setLoading(false);
+      });
+    }
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen pt-24 pb-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-muted-foreground">DECRYPTING_ARCHIVE...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!post) {
     return (

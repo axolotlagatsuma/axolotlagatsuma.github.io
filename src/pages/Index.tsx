@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Signal, Archive, FileText, Lock, Unlock, ShieldAlert } from "lucide-react";
 import BlueprintContainer from "@/components/BlueprintContainer";
 import SignalWave from "@/components/SignalWave";
 import BarcodeSvg from "@/components/BarcodeSvg";
 import TerminalButton from "@/components/TerminalButton";
-import { posts } from "@/data/posts";
+import { fetchAllPosts, type Post } from "@/data/posts";
 
 const securityColors: Record<string, string> = {
   UNCLASSIFIED: "border-foreground text-foreground",
@@ -21,9 +21,12 @@ const securityIcons: Record<string, React.ReactNode> = {
 
 const Index = () => {
   const [loaded, setLoaded] = useState(false);
+  const [posts, setPosts] = useState<Post[]>([]);
 
-  // Trigger boot animation
-  setTimeout(() => setLoaded(true), 100);
+  useEffect(() => {
+    fetchAllPosts().then(setPosts);
+    setTimeout(() => setLoaded(true), 100);
+  }, []);
 
   return (
     <div className={`min-h-screen pt-24 pb-16 px-4 ${loaded ? "boot-sequence" : "opacity-0"}`}>
@@ -48,7 +51,7 @@ const Index = () => {
             <span className="flex items-center gap-1 text-muted-foreground"><Signal size={12} /> SIGNAL —</span>
             <span className="text-foreground font-bold">STRONG</span>
             <span className="flex items-center gap-1 text-muted-foreground"><Archive size={12} /> ARCHIVE —</span>
-            <span className="text-foreground">4_FILES</span>
+            <span className="text-foreground">{posts.length}_FILES</span>
             <span className="flex items-center gap-1 text-muted-foreground"><FileText size={12} /> STATUS —</span>
             <span className="text-foreground">ENCRYPTED</span>
           </div>
@@ -66,7 +69,7 @@ const Index = () => {
             </p>
             <div className="flex items-center gap-4">
               <TerminalButton to="/">ACCESS_REGISTRY</TerminalButton>
-              <span className="text-[10px] text-muted-foreground">// 4 ENTRIES INDEXED</span>
+              <span className="text-[10px] text-muted-foreground">// {posts.length} ENTRIES INDEXED</span>
             </div>
           </div>
         </BlueprintContainer>
