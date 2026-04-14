@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="katman_1" data-name="katman 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76.8 118.32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #39bee9;
+        font-family: JetBrainsMono-Medium, 'JetBrains Mono';
+        font-size: 48px;
+        font-variation-settings: 'wght' 500;
+        font-weight: 500;
+        letter-spacing: .4em;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(0 41.52)"><tspan x="0" y="0">OP</tspan><tspan x="0" y="57.6">_A</tspan></text>
+</svg>
